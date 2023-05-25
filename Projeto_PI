@@ -1,9 +1,9 @@
-package projeto.forca_pi;
+package projeto_pi;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class ProjetoForca_Pi {
+public class Projeto_Pi {
     
     public static void jogo() {
         //Criando o Menu do Game - Part.01
@@ -15,7 +15,7 @@ public class ProjetoForca_Pi {
         Scanner scanmenu = new Scanner(System.in);
         Scanner entrada = new Scanner(System.in);
         int escolhaMenu = scanmenu.nextInt();
-        System.out.println("");
+        System.out.println(" ");
         if (escolhaMenu >= 1 && escolhaMenu <= 4) {
             switch (escolhaMenu) {
                 case 1:
@@ -48,47 +48,53 @@ public class ProjetoForca_Pi {
                         FuncaoT5(tema5);
 
                     }
+                    
                     break;
                 case 2:
                     Instruções();
-
                     break;
+                    
                 case 3:
                     creditos();
-
                     break;
+                    
                 case 4:
                     sair();
+                    System.exit(0);
                     break;
             }
+            
         } else {
             semOpcao();
         }
-        
-        System.out.println("");
+
     }
-    
-    public static void semOpcao(){
+
+    public static void semOpcao() {
+        //Funcao para mostrar que o codigo nao tem a opcao desejada
         System.out.println("Desculpe, mas infelizmente nao temos essa opcao. :/");
-            System.out.println("");
-            Repetir();
+        System.out.println("");
+        Repetir();
     }
 
     public static void linha() {
         //Linha para organizacao do Menu
+        System.out.println("");
         System.out.println("============================================================================================================================================================================================");
     }
 
     public static void Sair() {
         //Funcao para saida do Game - Part.01
-        System.out.println("Obrigado por jogar, esperamos que tenham gostado. :)");
+        System.out.println("");
+        System.out.println("Obrigado por jogar, esperamos que tenham gostado :)");
         System.exit(0);
+        System.out.println("");
     }
 
     public static void MaisdeUmaLetra(int falha) {
         //Funcao Global para mais de uma letra no sistema do Game
     }
-    
+
     static char Repetir;
     static int num;
     static boolean letraDuplicada = false;
@@ -174,7 +180,7 @@ public class ProjetoForca_Pi {
         } else if (tema4.equals("ADIDAS")) {
             System.out.println("Dica: As tres listras.");
         } else if (tema4.equals("GUCCI")) {
-            System.out.println("Dica: Marca com o duplo 'G' em sua logo.");
+            System.out.println("Dica: Marca com o duplo G.");
         } else if (tema4.equals("PUMA")) {
             System.out.println("Dica: Marca representada por um animal.");
         }
@@ -197,14 +203,13 @@ public class ProjetoForca_Pi {
         //Funcao para informar as instrucoes do Game - Part.02
         System.out.println("Instrucoes do Game:");
         System.out.println("");
-        System.out.println("¡¡¡ DIGITE APENAS UMA LETRA POR VEZ ¡¡¡");
+        System.out.println("¡¡¡ DIGITE APENAS UMA LETRA POR VEZ! ¡¡¡");
         System.out.println("");
         System.out.println("Existem temas que sao necessarios digitar o espaco.");
     }
 
     public static void desenhoForca(int erros) {
         //Funcao para criar o boneco ou desenho do Game
-        System.out.println();
         switch (erros) {
             case 1:
                 System.out.println("|---   ");
@@ -251,7 +256,7 @@ public class ProjetoForca_Pi {
                 System.out.println("|      ");
                 break;
         }
-        System.out.println();
+
     }
 
     public static String tema1() {
@@ -293,7 +298,7 @@ public class ProjetoForca_Pi {
         tema4 = Marcas[indice4];
         return tema4;
     }
-    
+
     public static String tema5() {
         //Funcao para indicar o 5º tema aleatorio
         String tema5;
@@ -303,7 +308,7 @@ public class ProjetoForca_Pi {
         tema5 = Herois[indice5];
         return tema5;
     }
-    
+
     public static void Repetir() {
         //Funcao para repetir o retornar ao menu
         System.out.println("Deseja voltar para o menu?");
@@ -313,13 +318,13 @@ public class ProjetoForca_Pi {
         System.out.println("");
         Scanner imput = new Scanner(System.in);
         Repetir = imput.next().toUpperCase().charAt(0);
-        System.out.println("");
         if (Repetir == 'S') {
             menu();
             jogo();
-        } if(Repetir == 'N'){
+        }
+        if (Repetir == 'N') {
             Sair();
-        } else{
+        } else {
             semOpcao();
         }
 
@@ -327,7 +332,6 @@ public class ProjetoForca_Pi {
 
     public static void Introducao1(String tema1) {
         //Funcao para informar qual foi sorteado - Part.01
-        System.out.println("");
         System.out.println("O tema sorteado foi 'POKEMON'");
         System.out.println("");
         Dicas1(tema1);
@@ -338,7 +342,6 @@ public class ProjetoForca_Pi {
 
     public static void Introducao2(String tema2) {
         //Funcao para informar qual foi sorteado - Part.02
-        System.out.println("");
         System.out.println("O tema sorteado foi 'FILMES'");
         System.out.println("");
         Dicas2(tema2);
@@ -348,7 +351,6 @@ public class ProjetoForca_Pi {
 
     public static void Introducao3(String tema3) {
         //Funcao para informar qual foi sorteado - Part.03
-        System.out.println("");
         System.out.println("O tema sorteado foi 'JOGADOR DE FUTEBOL'");
         System.out.println("");
         Dicas3(tema3);
@@ -358,7 +360,6 @@ public class ProjetoForca_Pi {
 
     public static void Introducao4(String tema4) {
         //Funcao para informar qual foi sorteado - Part.04
-        System.out.println("");
         System.out.println("O tema sorteado foi 'MARCA'");
         System.out.println("");
         Dicas4(tema4);
@@ -368,7 +369,6 @@ public class ProjetoForca_Pi {
 
     public static void Introducao5(String tema5) {
         //Funcao para informar qual foi sorteado - Part.05
-        System.out.println("");
         System.out.println("O tema sorteado foi 'HEROI DA MARVEL'");
         System.out.println("");
         Dicas5(tema5);
@@ -392,12 +392,11 @@ public class ProjetoForca_Pi {
             String letra = entTema1.nextLine().toUpperCase();
 
             if (letra.equals("PICHU") || letra.equals("CHARIZARD") || letra.equals("BULBASAUR") || letra.equals("SQUIRTLE")) {
-                falha = 1;  
+                falha = 1;
             }
-            
-            System.out.println("");
-            
-            if (palavrasDigitadas.indexOf(letra) != -1) { 
+            System.out.println(" ");
+            if (palavrasDigitadas.indexOf(letra) != -1) { //letra repetida
+                // ja digitou a palavra
                 System.out.println("Letra ja digitada... Digite novamente, por favor");
                 System.out.println("");
                 letraDuplicada = true;
@@ -419,21 +418,35 @@ public class ProjetoForca_Pi {
             System.out.println("Digite apenas uma letra por vez");
             System.out.println("Digite R para o jogo ser reiniciado");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas = "";
+            letra = "";
+            forca = "";
+            tema1 = "";
             Scanner imput = new Scanner(System.in);
             Repetir = imput.next().toUpperCase().charAt(0);
         } else if (erros == 6) {
             System.out.println("Poxa que pena, voce atingiu o maximo de erros... Por favor, tente novamente :]");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas = "";
+            letra = "";
+            forca = "";
+            tema1 = "";
             Repetir();
         } else {
             System.out.println("Parabens, voce ganhou! A palavra era " + tema1 + " :)");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas = "";
+            letra = "";
+            forca = "";
+            tema1 = "";
             Repetir();
         }
-        
         letra = "";
         forca = "";
-       
+        tema1 = "";
     }
 
     public static void FuncaoT2(String tema2) {
@@ -454,7 +467,6 @@ public class ProjetoForca_Pi {
             if (letra2.equals("TITANIC") || letra2.equals("VINGADORES ULTIMATO") || letra2.equals("FROZEN") || letra2.equals("JURASSIC WORLD")) {
                 falha = 1;
             }
-
             System.out.println("");
             if (palavrasDigitadas2.indexOf(letra2) != -1) { //letra repetida
                 // ja digitou a palavra
@@ -464,7 +476,6 @@ public class ProjetoForca_Pi {
             } else {
                 palavrasDigitadas2 = palavrasDigitadas2 + letra2;
             }
-
             if (tema2.contains(letra2)) {
                 for (int i = 0; i < tema2.length(); i++) {
                     if (tema2.charAt(i) == letra2.charAt(0)) {
@@ -480,20 +491,37 @@ public class ProjetoForca_Pi {
             System.out.println("Digite apenas uma letra por vez");
             System.out.println("Digite R para o jogo ser reiniciado");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas2 = "";
+            letra2 = "";
+            forca2 = "";
+            tema2 = "";
             Scanner imput = new Scanner(System.in);
             Repetir = imput.next().toUpperCase().charAt(0);
         } else if (erros == 6) {
             System.out.println("Poxa que pena, voce atingiu o maximo de erros... Por favor, tente novamente :]");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas2 = "";
+            letra2 = "";
+            forca2 = "";
+            tema2 = "";
             Repetir();
         } else {
             System.out.println("Parabens, voce ganhou! A palavra era " + tema2 + " :)");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas2 = "";
+            letra2 = "";
+            forca2 = "";
+            tema2 = "";
             Repetir();
         }
-
+        letraDuplicada = false;
+        palavrasDigitadas2 = "";
         letra2 = "";
         forca2 = "";
+        tema2 = "";
     }
 
     public static void FuncaoT3(String tema3) {
@@ -506,7 +534,7 @@ public class ProjetoForca_Pi {
         while (erros < 6 && forca3.contains("_") && falha != 1) {
             System.out.println("Palavra: " + forca3);
             System.out.println("Erros: " + erros);
-            System.out.println(" ");
+            System.out.println("");
             System.out.print("Digite uma letra: ");
             Scanner entTema3 = new Scanner(System.in);
             String letra3 = entTema3.nextLine().toUpperCase();
@@ -537,20 +565,37 @@ public class ProjetoForca_Pi {
             System.out.println("Digite apenas uma letra por vez");
             System.out.println("Digite R para o jogo ser reiniciado");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas3 = "";
+            letra3 = "";
+            forca3 = "";
+            tema3 = "";
             Scanner imput = new Scanner(System.in);
             Repetir = imput.next().toUpperCase().charAt(0);
         } else if (erros == 6) {
             System.out.println("Poxa que pena, voce atingiu o maximo de erros... Por favor, tente novamente :]");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas3 = "";
+            letra3 = "";
+            forca3 = "";
+            tema3 = "";
             Repetir();
         } else {
             System.out.println("Parabens, voce ganhou! A palavra era " + tema3 + " :)");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas3 = "";
+            letra3 = "";
+            forca3 = "";
+            tema3 = "";
             Repetir();
+
         }
 
         letra3 = "";
         forca3 = "";
+        tema3 = "";
     }
 
     public static void FuncaoT4(String tema4) {
@@ -593,21 +638,38 @@ public class ProjetoForca_Pi {
             System.out.println("Digite apenas uma letra por vez");
             System.out.println("Digite R para o jogo ser reiniciado");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas4 = "";
+            letra4 = "";
+            forca4 = "";
+            tema4 = "";
             Scanner imput = new Scanner(System.in);
             Repetir = imput.next().toUpperCase().charAt(0);
+            
         } else if (erros == 6) {
             System.out.println("Poxa que pena, voce atingiu o maximo de erros... Por favor, tente novamente :]");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas4 = "";
+            letra4 = "";
+            forca4 = "";
+            tema4 = "";
             Repetir();
 
         } else {
             System.out.println("Parabens, voce ganhou! A palavra era " + tema4 + " :)");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas4 = "";
+            letra4 = "";
+            forca4 = "";
+            tema4 = "";
             Repetir();
         }
 
         letra4 = "";
         forca4 = "";
+        tema4 = "";
     }
 
     public static void FuncaoT5(String tema5) {
@@ -651,28 +713,46 @@ public class ProjetoForca_Pi {
             System.out.println("Digite apenas uma letra por vez");
             System.out.println("Digite R para o jogo ser reiniciado");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas5 = "";
+            letra5 = "";
+            forca5 = "";
+            tema5 = "";
             Scanner imput = new Scanner(System.in);
             Repetir = imput.next().toUpperCase().charAt(0);
+
         } else if (erros == 6) {
             System.out.println("Poxa que pena, voce atingiu o maximo de erros... Por favor, tente novamente :]");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas5 = "";
+            letra5 = "";
+            forca5 = "";
+            tema5 = "";
             Repetir();
 
         } else {
             System.out.println("Parabens, voce ganhou! A palavra era " + tema5 + " :)");
             System.out.println("");
+            letraDuplicada = false;
+            palavrasDigitadas5 = "";
+            letra5 = "";
+            forca5 = "";
+            tema5 = "";
             Repetir();
         }
+
         letra5 = "";
         forca5 = "";
+        tema5 = "";
     }
 
     public static void sair() {
         //Funcao para saida do Game - Part.02
         System.out.println("Ja vai jogador? :(");
         System.out.println("Sendo assim, agradecemos por ter jogado nosso game :)");
-        System.exit(0);
         System.out.println("");
+
     }
 
     public static void creditos() {
@@ -687,12 +767,12 @@ public class ProjetoForca_Pi {
         System.out.println("");
         Repetir();
     }
-    
+
     public static void main(String[] args) {
         do {
             menu();
             jogo();
-        } while (Repetir == 'S');
+        } while (Repetir == 'S' || Repetir == 'R');
     }
     
 }
